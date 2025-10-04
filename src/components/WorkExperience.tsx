@@ -57,19 +57,22 @@ const itemVariants: Variants = {
 };
 
 const WorkExperience: React.FC = () => {
-  const [ref, isVisible] = useIntersectionObserver({ threshold: 0.2 });
+  const [ref, isVisible] = useIntersectionObserver({
+    threshold: 0.3,
+    rootMargin: '-80px 0px -100px 0px', // offset to match navbar
+  });
   const { isDark } = useTheme();
 
   return (
     <section
       id="work-experience"
+      ref={ref}
       className={`py-20 transition-colors duration-500 ${
-    isDark ? 'bg-gray-900' : 'bg-[#e5dfd4]'
+        isDark ? 'bg-gray-900' : 'bg-[#e5dfd4]'
       }`}
     >
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          ref={ref}
           initial="hidden"
           animate={isVisible ? 'visible' : 'hidden'}
           variants={containerVariants}

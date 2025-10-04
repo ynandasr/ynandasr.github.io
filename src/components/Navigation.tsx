@@ -1,4 +1,3 @@
-// Navigation.tsx
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Moon, Sun } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -22,41 +21,43 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, setActiveSection
     { id: 'projects', label: 'Projects' },
   ];
 
-  // Scroll effect for navbar shadow
+  // Navbar shadow effect
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Scroll to section with header offset
+  // Smooth scroll with header offset
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       const navHeight = document.querySelector('nav')?.clientHeight || 80;
-      const elementPosition = element.getBoundingClientRect().top + window.scrollY - navHeight;
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY - navHeight + 1; // +1 untuk memastikan trigger scroll spy
       window.scrollTo({ top: elementPosition, behavior: 'smooth' });
       setActiveSection(sectionId);
       setIsMenuOpen(false);
     }
   };
 
-  // Update activeSection while scrolling
+  // Scroll spy yang stabil
   useEffect(() => {
-    const sections = document.querySelectorAll('section[id]');
-    const handleScroll = () => {
+    const handleScrollSpy = () => {
+      const navHeight = document.querySelector('nav')?.clientHeight || 80;
       let current = '';
-      sections.forEach(sec => {
-        const navHeight = document.querySelector('nav')?.clientHeight || 80;
-        const top = sec.offsetTop - navHeight - 5; // 5px buffer
-        if (window.scrollY >= top) {
+      document.querySelectorAll('section[id]').forEach((sec) => {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top <= navHeight + 5 && rect.bottom > navHeight) { // offset sedikit untuk stabil
           current = sec.id;
         }
       });
       setActiveSection(current);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    window.addEventListener('scroll', handleScrollSpy);
+    handleScrollSpy(); // trigger sekali di load
+
+    return () => window.removeEventListener('scroll', handleScrollSpy);
   }, [setActiveSection]);
 
   return (
@@ -74,7 +75,6 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, setActiveSection
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          {/* Animated Header */}
           <motion.h1
             className={`text-xl font-bold tracking-wide whitespace-nowrap ${isScrolled || isDark ? 'text-white' : 'text-white'}`}
             animate={{ x: ['100%', '-100%'] }}
@@ -83,7 +83,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, setActiveSection
             Hi, There!
           </motion.h1>
 
-          {/* Desktop Nav */}
+          {/* Desktop Menu */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-8">
               {navItems.map((item) => (
@@ -123,9 +123,8 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, setActiveSection
             </div>
           </div>
 
-          {/* Mobile Nav */}
+          {/* Mobile Menu */}
           <div className="md:hidden flex items-center space-x-2">
-            {/* Theme Toggle */}
             <motion.div
               whileTap={{ scale: 0.95 }}
               onClick={toggleTheme}
@@ -151,7 +150,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, setActiveSection
           </div>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Dropdown */}
         {isMenuOpen && (
           <motion.div
             initial={{ opacity: 0, y: -20 }}
