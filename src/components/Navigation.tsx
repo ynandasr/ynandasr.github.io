@@ -130,7 +130,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, setActiveSection
               whileTap={{ scale: 0.95 }}
               onClick={toggleTheme}
               className={`w-14 h-7 flex items-center rounded-full cursor-pointer transition-colors duration-300
-                ${isDark ? 'bg-blue-600' : 'bg-[#928262]'}`}
+                ${isDark ? 'bg-[#958464] shadow-lg border-b border-[#958464]' : 'bg-[#928262]'}`}
             >
               <motion.div
                 layout
@@ -158,7 +158,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, setActiveSection
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             className={`md:hidden mt-2 py-2 rounded-lg backdrop-blur-lg border border-white/20 shadow-lg
-              ${isDark ? 'bg-gray-900/95' : 'bg-blue-600/95'}`}
+              ${isDark ? 'bg-gray-900/95' : 'bg-[#958464] shadow-lg border-b border-[#958464]'}`}
           >
             {navItems.map((item) => (
               <button

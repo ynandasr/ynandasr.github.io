@@ -4,10 +4,10 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { useTheme } from '../contexts/ThemeContext';
-import picture_3 from '../public/picture_3.jpg';
-import picture_4 from '../public/picture_4.jpg';
-import picture_5 from '../public/picture_5.jpg';
-import picture_6 from '../public/picture_6.jpg';
+import picture_3 from '../assets/picture_3.jpg';
+import picture_4 from '../assets/picture_4.jpg';
+import picture_5 from '../assets/picture_5.jpg';
+import picture_6 from '../assets/picture_6.jpg';
 
 // warna pastel ala stabilo
 const tagColors: Record<string, string> = {

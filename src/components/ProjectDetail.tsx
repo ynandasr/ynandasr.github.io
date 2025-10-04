@@ -12,10 +12,10 @@ import {
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useTheme } from '../contexts/ThemeContext';
-import deepp from '../public/deepp.jpeg';
-import phyton from '../public/phyton.jpeg';
-import sql from '../public/sql.jpeg';
-import Dashboard from '../public/Dashboard.png';
+import deepp from '../assets/deepp.jpeg';
+import phyton from '../assets/phyton.jpeg';
+import sql from '../assets/sql.jpeg';
+import Dashboard from '../assets/Dashboard.png';
 
 const ProjectDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
