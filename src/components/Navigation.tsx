@@ -33,32 +33,34 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, setActiveSection
     const element = document.getElementById(sectionId);
     if (element) {
       const navHeight = document.querySelector('nav')?.clientHeight || 80;
-      const elementPosition = element.getBoundingClientRect().top + window.scrollY - navHeight + 1; // +1 untuk memastikan trigger scroll spy
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY - navHeight + 2; // +2 px untuk stabil
       window.scrollTo({ top: elementPosition, behavior: 'smooth' });
       setActiveSection(sectionId);
       setIsMenuOpen(false);
     }
   };
 
-  // Scroll spy yang stabil
+  // Scroll spy yang lebih stabil
   useEffect(() => {
     const handleScrollSpy = () => {
       const navHeight = document.querySelector('nav')?.clientHeight || 80;
       let current = '';
       document.querySelectorAll('section[id]').forEach((sec) => {
         const rect = sec.getBoundingClientRect();
-        if (rect.top <= navHeight + 5 && rect.bottom > navHeight) { // offset sedikit untuk stabil
+        if (rect.top <= navHeight + 5 && rect.bottom > navHeight) {
           current = sec.id;
         }
       });
-      setActiveSection(current);
+      if (current && current !== activeSection) {
+        setActiveSection(current);
+      }
     };
 
     window.addEventListener('scroll', handleScrollSpy);
-    handleScrollSpy(); // trigger sekali di load
+    handleScrollSpy(); // trigger sekali saat load
 
     return () => window.removeEventListener('scroll', handleScrollSpy);
-  }, [setActiveSection]);
+  }, [activeSection, setActiveSection]);
 
   return (
     <motion.nav
