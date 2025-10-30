@@ -7,5 +7,5 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
-  base: '/my-portfolio/', // <--- tambahkan ini
+  base: '/', // ✅ untuk repo bernama ynandasr.github.io
 });
