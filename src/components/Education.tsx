@@ -40,7 +40,7 @@ const educationData: EducationItem[] = [
   {
     degree: 'RevoU',
     institution: 'Full Stack Data Analytics Program',
-    period: 'Aug 2025 - Oct 2025',
+    period: 'June 2025 - Sept 2025',
     description:
       'Completed RevoU Full-stack Data Analytics program, gaining hands-on experience in statistics, SQL, Python, and Tableau through real projects to generate actionable insights.',
   },
