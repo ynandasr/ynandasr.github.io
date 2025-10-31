@@ -47,23 +47,23 @@ const educationData: EducationItem[] = [
 ];
 
 const certificationsData: Certification[] = [
-  { 
-    name: 'Full Stack Data Analytics', 
-    year: 'Oct 2025', 
-    issuer: 'RevoU', 
-    url: '#' 
+  {
+    name: 'Full Stack Data Analytics',
+    year: 'Oct 2025',
+    issuer: 'RevoU',
+    url: '#'
   },
-  { 
-    name: 'HSK 1 初级上', 
-    year: 'Aug 2025', 
-    issuer: 'Cetta Online Class', 
-    url: 'https://drive.google.com/file/d/12YDoWh5jDIrOaZis25YwFZOKCfOhXyyX/view' 
+  {
+    name: 'HSK 1 初级上',
+    year: 'Aug 2025',
+    issuer: 'Cetta Online Class',
+    url: 'https://drive.google.com/file/d/12YDoWh5jDIrOaZis25YwFZOKCfOhXyyX/view'
   },
-  { 
-    name: 'Data Analytics Mini Course', 
-    year: 'May 2025', 
-    issuer: 'RevoU', 
-    url: 'https://drive.google.com/file/d/1DQCHFjnzBfWx9i5p0LleZsmHC5egyie5/view' 
+  {
+    name: 'Data Analytics Mini Course',
+    year: 'May 2025',
+    issuer: 'RevoU',
+    url: 'https://drive.google.com/file/d/1DQCHFjnzBfWx9i5p0LleZsmHC5egyie5/view'
   },
 ];
 
@@ -91,7 +91,7 @@ const getLogo = (institution: string) => {
 // 🔹 Helper: ambil logo untuk certifications
 const getCertLogo = (issuer: string) => {
   if (issuer === 'RevoU') return revouLogo;
-  if (issuer === 'Cetta Online Class') return  cetta;
+  if (issuer === 'Cetta Online Class') return cetta;
   return null;
 };
 
@@ -102,9 +102,8 @@ const Education: React.FC = () => {
   return (
     <section
       id="education"
-      className={`py-20 transition-colors duration-500 ${
-        isDark ? 'bg-gray-900' : 'bg-[#e5dfd4]'
-      }`}
+      className={`py-20 transition-colors duration-500 ${isDark ? 'bg-gray-900' : 'bg-[#e5dfd4]'
+        }`}
     >
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -117,9 +116,8 @@ const Education: React.FC = () => {
           <div className="text-center mb-12">
             <motion.h2
               variants={itemVariants}
-              className={`text-4xl md:text-5xl font-bold mb-4 ${
-                isDark ? 'text-white' : 'text-gray-900'
-              }`}
+              className={`text-4xl md:text-5xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'
+                }`}
             >
               Education
             </motion.h2>
@@ -131,9 +129,8 @@ const Education: React.FC = () => {
             />
             <motion.p
               variants={itemVariants}
-              className={`text-lg max-w-2xl mx-auto mt-6 ${
-                isDark ? 'text-gray-300' : 'text-gray-600'
-              }`}
+              className={`text-lg max-w-2xl mx-auto mt-6 ${isDark ? 'text-gray-300' : 'text-gray-600'
+                }`}
             >
               Academic background and certifications.
             </motion.p>
@@ -147,11 +144,10 @@ const Education: React.FC = () => {
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className={`p-8 rounded-2xl border shadow-lg transition-transform duration-300 hover:-translate-y-1 ${
-                    isDark
+                  className={`p-8 rounded-2xl border shadow-lg transition-transform duration-300 hover:-translate-y-1 ${isDark
                       ? 'bg-gray-800/50 border-gray-700 hover:shadow-gray-700/50'
                       : 'bg-[#ebeae6] border-gray-200 hover:shadow-lg'
-                  }`}
+                    }`}
                 >
                   <div className="flex items-center gap-3 mb-4">
                     {logo ? (
@@ -166,42 +162,37 @@ const Education: React.FC = () => {
                       </div>
                     )}
                     <h3
-                      className={`text-xl font-bold ${
-                        isDark ? 'text-white' : 'text-gray-900'
-                      }`}
+                      className={`text-xl font-bold ${isDark ? 'text-white' : 'text-gray-900'
+                        }`}
                     >
                       {edu.degree}
                     </h3>
                   </div>
                   <p
-                    className={`text-sm font-semibold mb-2 ${
-                      isDark ? 'text-gray-300' : 'text-[#51505c]'
-                    }`}
+                    className={`text-sm font-semibold mb-2 ${isDark ? 'text-gray-300' : 'text-[#51505c]'
+                      }`}
                   >
                     {edu.institution}
                   </p>
                   <div
-                    className={`inline-flex items-center px-4 py-1.5 rounded-full text-xs font-medium mb-3 ${
-                      isDark
+                    className={`inline-flex items-center px-4 py-1.5 rounded-full text-xs font-medium mb-3 ${isDark
                         ? 'bg-gray-700 text-gray-300'
                         : 'bg-gray-100 text-gray-700'
-                    }`}
+                      }`}
                   >
                     <Calendar className="w-4 h-4 mr-2" />
                     {edu.period}
                   </div>
                   <p
-                    className={`text-xs leading-relaxed ${
-                      isDark ? 'text-gray-400' : 'text-gray-600'
-                    }`}
+                    className={`text-xs leading-relaxed ${isDark ? 'text-gray-400' : 'text-gray-600'
+                      }`}
                   >
                     {edu.description}
                   </p>
                   {edu.gpa && (
                     <p
-                      className={`mt-3 text-xs ${
-                        isDark ? 'text-gray-400' : 'text-[#51505c]'
-                      }`}
+                      className={`mt-3 text-xs ${isDark ? 'text-gray-400' : 'text-[#51505c]'
+                        }`}
                     >
                       GPA: {edu.gpa}
                     </p>
@@ -214,9 +205,8 @@ const Education: React.FC = () => {
           {/* Certifications */}
           <motion.div variants={itemVariants}>
             <h3
-              className={`text-2xl font-bold mb-6 text-center ${
-                isDark ? 'text-white' : 'text-gray-900'
-              }`}
+              className={`text-2xl font-bold mb-6 text-center ${isDark ? 'text-white' : 'text-gray-900'
+                }`}
             >
               Certifications
             </h3>
@@ -229,11 +219,10 @@ const Education: React.FC = () => {
                   rel="noopener noreferrer"
                   variants={itemVariants}
                   whileHover={{ scale: 1.05 }}
-                  className={`p-6 rounded-xl border transition-all duration-300 text-center hover:-translate-y-1 cursor-pointer ${
-                    isDark
+                  className={`p-6 rounded-xl border transition-all duration-300 text-center hover:-translate-y-1 cursor-pointer ${isDark
                       ? 'bg-gray-800/50 border-gray-700 hover:border-gray-500 hover:shadow-md'
                       : 'bg-[#ebeae6] border-gray-200 hover:border-[#9d6738] hover:shadow-lg'
-                  }`}
+                    }`}
                 >
                   <div className="p-3 rounded-full bg-[#9d6738]/20 w-fit mx-auto mb-3">
                     {getCertLogo(cert.issuer) ? (
@@ -247,25 +236,22 @@ const Education: React.FC = () => {
                     )}
                   </div>
                   <h4
-                    className={`text-sm font-semibold mb-1 ${
-                      isDark ? 'text-white' : 'text-gray-900'
-                    }`}
+                    className={`text-sm font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'
+                      }`}
                   >
                     {cert.name}
                   </h4>
                   <p
-                    className={`text-xs mb-2 ${
-                      isDark ? 'text-gray-400' : 'text-gray-600'
-                    }`}
+                    className={`text-xs mb-2 ${isDark ? 'text-gray-400' : 'text-gray-600'
+                      }`}
                   >
                     {cert.issuer}
                   </p>
                   <span
-                    className={`inline-block px-3 py-1 rounded-full text-xs font-medium ${
-                      isDark
+                    className={`inline-block px-3 py-1 rounded-full text-xs font-medium ${isDark
                         ? 'bg-[#9d6738]/30 text-[#f5d7b0]'
                         : 'bg-[#f2e1d1] text-[#9d6738]'
-                    }`}
+                      }`}
                   >
                     {cert.year}
                   </span>
