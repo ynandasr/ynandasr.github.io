@@ -51,7 +51,7 @@ const certificationsData: Certification[] = [
     name: 'Full Stack Data Analytics',
     year: 'Oct 2025',
     issuer: 'RevoU',
-    url: '#'
+    url: 'https://certificates.revou.tech/?id=FSDA-2025-10-36975094841&name=Yuliani%20Nanda%20Sari'
   },
   {
     name: 'HSK 1 初级上',

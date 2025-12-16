@@ -13,8 +13,8 @@ import { motion } from 'framer-motion';
 import { useTheme } from '../contexts/ThemeContext';
 import deepp from '../assets/deepp.jpeg';
 import phyton from '../assets/phyton.jpeg';
-import sql from '../assets/sql.jpeg';
-import Dashboard from '../assets/Dashboard.png';
+import dess from '../assets/dess.jpeg';
+import fipp from '../assets/fipp.jpeg';
 
 const ProjectDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -23,6 +23,68 @@ const ProjectDetail: React.FC = () => {
   const projects = {
     '1': {
       id: 1,
+      title: 'RevoFin Loan Risk Analysis (Understanding Cohort Behavior and Key Risk Indicators)',
+      description:
+        'Cohort and borrower-level analysis using TKB30 to detect debt-related delinquency risk patterns.',
+      image: fipp,
+      slideUrl:
+        'https://drive.google.com/file/d/1GF1Go5pYCAnrWlxmQ3eFqrP8y85ZNOYt/view?usp=sharing',
+      duration: '10 days',
+      team: 'Individual',
+      tools: ['SQL', 'Tableau'],
+      details: {
+        background:
+          'RevoFin conducted a loan portfolio review to assess portfolio health using TKB30 as a key risk indicator. With $2.801B in Outstanding Loans (OS) and ENR closely aligned, the analysis aimed to identify high-risk cohorts and understand borrower characteristics driving delinquency, particularly related to debt exposure.',
+        method: {
+          text: '',
+          points: [
+            'Performed cohort-based analysis by segmenting loans into monthly vintages and calculating OS, ENR, and TKB30. An in-depth profiling was conducted on the lowest-performing cohort (April 2014), examining borrower income, home ownership, loan purpose, and interest rates to identify risk drivers.',
+          ],
+        },
+        result: {
+          text: 'Key insights and actions included:',
+          points: [
+            'Anomaly Detection: April 2014 recorded the lowest TKB30 (~93%), driven by a higher share of loans overdue >30 days.',
+            'Borrower Profile: 60% of borrowers were still paying mortgages, with only 6.8% fully owning homes, increasing debt burden and delinquency risk.',
+            'Recommendations: Strengthen underwriting for debt-related loans (e.g., debt consolidation and refinancing) and enhance monitoring of highly leveraged borrowers.',
+            'Goal: Reduce future delinquency risk by improving borrower screening and early risk detection for high-debt segments.',
+          ],
+        },
+      },
+    },
+    '2': {
+      id: 2,
+      title: 'App Funnel Drop-off Analysis & Cluster Conversion Optimization',
+      description:
+        'Funnel analysis to identify user drop-offs and friction points, followed by customer segmentation for targeted conversion improvements.',
+      image: dess,
+      slideUrl:
+        'https://drive.google.com/file/d/1wmSz3bzxiYcGQfkuqxsL_FJ09agnH2Cv/view?usp=sharing',
+      duration: '12 days',
+      team: 'Individual',
+      tools: ['Python, Tableau'],
+      details: {
+        background:
+          'QuickU, a fast-growing q-commerce platform, faced a low overall conversion rate of 13.8% due to significant user drop-offs during checkout and payment stages. The analysis aimed to identify key friction points and user behaviors to improve conversion performance in the upcoming year.',
+        method: {
+          text: '',
+          points: [
+            'Funnel Evaluation: Assessed drop-off rates across key stages to identify critical bottlenecks.',
+            'User Segmentation: Applied behavior-based clustering to group users with similar purchase patterns and friction points.',
+          ],
+        },
+        result: {
+          text: '',
+          points: [
+            'Funnel Bottlenecks: Checkout abandonment (65.0%) and payment drop-off (31.9%) emerged as the main conversion barriers.',
+            'User Segments: Identified three clusters, High-Value Users with payment friction, Mid-Value Users with moderate drop-offs, and Young, High-Friction Users with the lowest completion rate.',
+            'Recommendations: Improve and expand payment options to reduce checkout and payment friction, prioritizing solutions tailored to High-Value and Young, High-Friction users.',
+          ],
+        },
+      },
+    },
+    '3': {
+      id: 3,
       title: 'MunchMelt Q4 Growth Plan - Delivering +5% vs Baseline',
       description:
         'Presentation about forecasting and planning Q4 sales growth to deliver +5% vs baseline.',
@@ -43,18 +105,18 @@ const ProjectDetail: React.FC = () => {
           ],
         },
         result: {
-          text: 'Key insights and actions included:',
+          text: '',
           points: [
             'Revenue Drivers: Milk products contributed 43% of revenue; White and Nut chocolates had high revenue per box.',
             'Regional Focus: Canada underperformed vs. the USA ($30.8 vs. $38.6 revenue per box)',
             'Recommendations: Promote premium products, implement value-led promotions, strengthen Canadian market strategies, and maintain pricing integrity.',
-            'Impact Goal: Targeted uplift of ~270 boxes in Canada for Q4 to bridge the efficiency gap and support the 5% revenue growth objective',
+            'Goal: Targeted uplift of ~270 boxes in Canada for Q4 to bridge the efficiency gap and support the 5% revenue growth objective',
           ],
         },
       },
     },
-    '2': {
-      id: 2,
+    '4': {
+      id: 4,
       title: 'Customer Segmentation using K-Means',
       description:
         'Analysis about customer grouping using K-Means clustering for business insights.',
@@ -70,8 +132,8 @@ const ProjectDetail: React.FC = () => {
         method: {
           text: '',
           points: [
-            'Data Cleaning: Removed outliers, resulting in 1,883 entries to ensure realistic metrics.',
-            'Data Analysis: Applied K-Means clustering validated with Elbow and Silhouette Score to segment customers.',
+            'Customer Segmentation & Insights: Identified four segments (Senior Loyalists, Dormant Young, Middle Active Spenders, High Value Seniors), highlighting growth, upselling, and retention opportunities.',
+            'Actionable Recommendations: Implement targeted reactivation, upselling, and VIP retention programs to increase credit card usage and drive long-term revenue growth.',
           ],
         },
         result: {
@@ -79,67 +141,6 @@ const ProjectDetail: React.FC = () => {
           points: [
             'Customer Segmentation & Insights: Identified four segments (Senior Loyalists, Dormant Young, Middle Active Spenders, High Value Seniors), highlighting growth, upselling, and retention opportunities.',
             'Actionable Recommendations: Implement targeted reactivation, upselling, and VIP retention programs to increase credit card usage and drive long-term revenue growth.',
-          ],
-        },
-      },
-    },
-    '3': {
-      id: 3,
-      title: 'RevoGrocers Sales Performance Analysis',
-      description:
-        'Analysis about sales performance and key business insights.',
-      image: sql,
-      slideUrl:
-        'https://drive.google.com/file/d/1T9NuL5tGpGhW4b9vcPsU8P4oqlE-DnX7/view?usp=sharing',
-      duration: '1 week',
-      team: 'Individual',
-      tools: ['SQL (BigQuery)'],
-      details: {
-        background:
-          'RevoGrocers, a multi-location grocery retailer, aimed to optimize sales and customer retention by analyzing product category performance. The analysis used transactional data from Kaggle, focusing on total revenue, unique customers, average price per unit, and repeat purchase rates to guide strategic sales decisions.',
-        method: {
-          text: '',
-          points: [
-            'Assessed variations in revenue and customer engagement across categories using key metrics.',
-            'Conducted nine SQL queries to extract insights on revenue, product performance, pricing, and customer behavior.',
-          ],
-        },
-        result: {
-          text: '',
-          points: [
-            'Key Insights: Confections, Meat, and Poultry generated the highest revenue and repeat purchase rates, while units sold closely correlated with total revenue.',
-            'Actionable Recommendations: Stock and promote bestsellers, optimize premium pricing for select categories, and implement loyalty programs to boost engagement and retention',
-          ],
-        },
-      },
-    },
-    '4': {
-      id: 4,
-      title: 'RevoFinance: Expense & Budget Utilization Dashboard',
-      description:
-        'Dashboard about tracking expenses and monitoring budget utilization.',
-      image: Dashboard,
-      slideUrl:
-        'https://drive.google.com/file/d/114vQF8uhD7uUJInjC2oFNpnZ3XM8BETU/view?usp=sharing',
-      duration: '1 week',
-      team: 'Individual',
-      tools: ['Tableau', 'Excel'],
-      details: {
-        background:
-          'RevoFinance, a fintech application, aimed to reduce users’ average overspending by 20% by providing clearer insights into spending patterns and budget utilization. The analysis used transaction, merchant, and budget data to track monthly spending, identify overspending trends, and inform feature improvements.',
-        method: {
-          text: '',
-          points: [
-            'Examined spending patterns, transaction sizes, and budget utilization to identify overspending areas.',
-            'Data Analysis: Linked multiple datasets in Tableau to analyze spending by category, merchant, and location, uncovering trends and behavioral patterns.',
-            'Data Visualization & Presentation: Created charts, graphs, and maps in Tableau to communicate insights.',
-          ],
-        },
-        result: {
-          text: '',
-          points: [
-            'Key Insights: Users overspend on non-essential categories (Education, Entertainment, Travel) and show seasonal peaks, while essential categories remain under budget; top merchants account for a large portion of spending.',
-            'Actionable Recommendations: Implement budget alerts for near-limit spending, introduce seasonal auto-save features, and partner with top merchants for cashback or discounts to improve engagement and financial management.',
           ],
         },
       },

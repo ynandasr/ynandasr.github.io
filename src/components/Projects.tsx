@@ -6,8 +6,8 @@ import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { useTheme } from '../contexts/ThemeContext';
 import picture_3 from '../assets/picture_3.jpg';
 import picture_4 from '../assets/picture_4.jpg';
-import picture_5 from '../assets/picture_5.jpg';
-import picture_6 from '../assets/picture_6.jpg';
+import funnelpict from '../assets/funnelpict.jpg';
+import revofinpict from '../assets/revofinpict.jpg';
 
 // 🧩 Import skill icons
 import pythonIcon from '../assets/python.png';
@@ -35,7 +35,25 @@ const Projects: React.FC = () => {
   const projects = [
     {
       id: 1,
-      title: 'MunchMelt Q4 Growth Plan - Delivering +5% vs Baseline',
+      title: 'RevoFin Loan Risk Analysis (Understanding Cohort Behavior and Key Risk Indicators)',
+      description: 'Cohort and borrower-level analysis using TKB30 to detect debt-related delinquency risk patterns.',
+      tags: ['EDA', 'SQL', 'Tableau'],
+      image: revofinpict,
+      slideUrl:
+        'https://drive.google.com/file/d/1GF1Go5pYCAnrWlxmQ3eFqrP8y85ZNOYt/view?usp=sharing',
+    },
+    {
+      id: 2,
+      title: 'App Funnel Drop-off Analysis & Cluster Conversion Optimization',
+      description: 'Funnel analysis to identify user drop-offs, followed by customer segmentation for targeted conversion improvements.',
+      tags: ['EDA', 'Clustering Analysis', 'Python', 'Tableau'],
+      image: funnelpict,
+      slideUrl:
+        'https://drive.google.com/file/d/1wmSz3bzxiYcGQfkuqxsL_FJ09agnH2Cv/view?usp=sharing',
+    },
+    {
+      id: 3,
+      title: 'MunchMelt Q4 Growth Plan',
       description: 'Analysis about forecasting and planning Q4 sales growth.',
       tags: ['EDA', 'Linear Regression', 'Python', 'Tableau'],
       image: picture_3,
@@ -43,31 +61,13 @@ const Projects: React.FC = () => {
         'https://drive.google.com/file/d/1VijTrfXUtv95NsgfkHk4rISPyk07Rv4r/view?usp=sharing',
     },
     {
-      id: 2,
+      id: 4,
       title: 'Customer Segmentation using K-Means',
       description: 'Analysis about customer grouping using K-Means clustering.',
       tags: ['EDA', 'Clustering Analysis', 'Python'],
       image: picture_4,
       slideUrl:
         'https://drive.google.com/file/d/1dj7tJwagF8VbmDbjXf1xJbC3-t22fEBH/view?usp=sharing',
-    },
-    {
-      id: 3,
-      title: 'RevoGrocers Sales Performance Analysis',
-      description: 'Analysis about sales performance and key business insights.',
-      tags: ['EDA', 'SQL'],
-      image: picture_6,
-      slideUrl:
-        'https://drive.google.com/file/d/1T9NuL5tGpGhW4b9vcPsU8P4oqlE-DnX7/view?usp=sharing',
-    },
-    {
-      id: 4,
-      title: 'RevoFinance: Expense & Budget Utilization Dashboard',
-      description: 'Dashboard about tracking expenses and monitoring budget utilization.',
-      tags: ['Performance Metrics', 'Tableau'],
-      image: picture_5,
-      slideUrl:
-        'https://drive.google.com/file/d/114vQF8uhD7uUJInjC2oFNpnZ3XM8BETU/view?usp=sharing',
     },
   ];
 
