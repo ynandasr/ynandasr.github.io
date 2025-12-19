@@ -31,10 +31,10 @@ const ProjectDetail: React.FC = () => {
         'https://drive.google.com/file/d/1GF1Go5pYCAnrWlxmQ3eFqrP8y85ZNOYt/view?usp=sharing',
       duration: '10 days',
       team: 'Individual',
-      tools: ['SQL', 'Tableau'],
+      tools: ['SQL', 'Tableau'], 
       details: {
         background:
-          'RevoFin conducted a loan portfolio review to assess portfolio health using TKB30 as a key risk indicator. With $2.801B in Outstanding Loans (OS) and ENR closely aligned, the analysis aimed to identify high-risk cohorts and understand borrower characteristics driving delinquency, particularly related to debt exposure.',
+          '[Finance Industry Application] RevoFin conducted a loan portfolio review to assess portfolio health using TKB30 as a key risk indicator. With $2.801B in Outstanding Loans (OS) and ENR closely aligned, the analysis aimed to identify high-risk cohorts and understand borrower characteristics driving delinquency, particularly related to debt exposure.',
         method: {
           text: '',
           points: [
@@ -318,7 +318,14 @@ const ProjectDetail: React.FC = () => {
                   </div>
                 </li>
               </ul>
-            </motion.div>
+
+              {/* Disclaimer – only show for project 1 & 2 */}
+              {(id === '1' || id === '2') && (
+                <p className="mt-4 text-xs text-gray-500 italic">
+                  *Disclaimer: The project is a part of RevoU Data Insight Project, a 4-week case study designed to analyze customized datasets and address business challenges. Supervised by RevoU, this project hones analytical skills, strengthens problem-solving abilities, and guides students in delivering actionable insights.
+                </p>
+              )}
+              </motion.div>
           </div>
 
           {/* Right Column: Project Overview */}
